@@ -17,13 +17,13 @@ namespace COMP003A.Assignment5
                 Console.Write("\n\nEnter your name: ");
                 string name = Console.ReadLine();
 
-                Console.Write("Enter your age: ");
-                int age = int.Parse(Console.ReadLine());
+                Console.Write("Enter your number: ");
+                int num = int.Parse(Console.ReadLine());
 
 
                 // calculation results
                 int constant = 5;
-                int result = AgeCalculation(age, constant);
+                int result = NumCalculation(num, constant);
                 Console.WriteLine($"\nCalculated Value: {result}");
 
                 // evaluation
@@ -36,8 +36,16 @@ namespace COMP003A.Assignment5
                     Console.WriteLine("Your number is less than or equal to 20");
                 }
 
-                // user input for repetition
+               
                 Console.Write("\nWould you like to restart the program? (y/n): ");
+
+                // user input for repetition
+                char yesNoLoop = char.Parse(Console.ReadLine());
+
+                if (yesNoLoop == 'n')
+                {
+                    break;
+                }
 
             }
         }
@@ -46,10 +54,10 @@ namespace COMP003A.Assignment5
             // first message
             Console.Write(message);
         }
-        static int AgeCalculation(int age, int constant)
+        static int NumCalculation(int num, int constant)
         {
-            // calculation adding 5 to age
-            return age + constant;
+            // calculation adding 5 to num
+            return num + constant;
         }
     }
 }
